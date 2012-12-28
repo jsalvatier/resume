@@ -6,6 +6,7 @@
 \textwidth=5.2in % increase textwidth to get smaller right margin
 %\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
 %\usepackage{newcent}   % uses new century schoolbook postscript font 
+\usepackage{hyperref}
 
 \begin{document} 
  
@@ -20,12 +21,13 @@
      \item Used time-series models to look for bond/futures market trading strategies 
      \item Built on-line predictive model for high freq price data 
      \item Built and improved existing trading infrastructure
+     \item Built strategy backtesting system
    \end{itemize}
 
   {\bf Process Engineer (Intern)} Boise-Cascade, Pasco, WA \hfill  Summer 08
     \vspace{6pt}
   \begin{itemize} \itemsep -2pt %reduce space between items
-    \item Investigated and evaluated economics and feasibility of three capital projects on paper machines and in pulp mill 
+    \item Investigated economics and feasibility of three capital projects on paper machines and in pulp mill 
     \item Conducted trial to investigate systemic product quality measurement problems and issued recommendations 
   \end{itemize}
 
@@ -34,7 +36,6 @@
   \begin{itemize} \itemsep -2pt
     \item Worked with mill energy engineer analyzing water, paper stock, air systems for improvements 
     \item Evaluated maintenance and energy projects for cost effectiveness and issued action recommendations 
-    \item Conducted process troubleshooting and issued correction recommendations
    \end{itemize}
 
   {\bf Navigator (part-time)} 1-800-GOT-JUNK, Seattle, WA \hfill  07-08 School Year
@@ -57,19 +58,19 @@
 \section{Open Source}
   {\bf Github account} github.com/jsalvatier 
 
-  {\bf Pymc2} Bayesian inference package (Python) 
+  {\bf \href{https://github.com/pymc-devs/pymc#readme}{Pymc2}} Bayesian inference package (Python) 
     \vspace{6pt}
   \begin{itemize} \itemsep -2pt
-    \item Overhauled likelihood calculation to provide gradient calculations using automatic differentiation
-    \item Explored numexpr and Cython code generation as alternative fast likelihood calculations
-    \item Built advanced Monte Carlo samplers PyMC which scale well with problem size, automatically tune themselves, handle difficult distributions well etc.
-    \item Wrote an experimental replacement for PyMC that drastically reduced the codebase and code complexity which will become PyMC3
+    \item Overhauled likelihood calculation to automatically provide gradients 
+    \item Implemented advanced MCMC samplers which scale better with problem size, self-tune, handle difficult distributions well etc.
+    \item Researched numexpr and Cython code generation for likelihoods
+    \item Wrote experimental PyMC replacement with drastically simpler and smaller codebase; now slated to be PyMC3
    \end{itemize}
 
-  {\bf scikits.bvp\_solver} (Python, packages.python.org/scikits.bvp\_solver) \\ 
+   {\bf \href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}} Wrote an easy to use interface for the Fortran numerical \\
+    boundary value problem solver BVP\_SOLVER \\ 
     \vspace{6pt}
-    Wrote an easy to use interface for the Fortran numerical boundary value problem solver BVP\_SOLVER 
-  
+  \end{itemize} 
 
 \end{resume} 
 \end{document} 
