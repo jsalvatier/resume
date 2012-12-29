@@ -8,6 +8,18 @@
 %\usepackage{newcent}   % uses new century schoolbook postscript font 
 \usepackage{hyperref}
 
+\newcommand{\bactivity}[3]{
+  {\bf #1} #2 \hfill #3
+    \vspace{6pt}
+    \begin{itemize} \itemsep -2pt
+      }
+\newcommand{\eactivity}[0]{\end{itemize}}
+
+
+\newcommand{\bitem}{\begin{itemize} \itemsep -2pt}
+\newcommand{\eitem}{\end{itemize} }
+
+
 \begin{document} 
  
 \name{John Salvatier\\[12pt]} % the \\[12pt] adds a blank line after name
@@ -15,68 +27,64 @@
  
 
 \section{Experience}
-  {\bf Developer/Quant} RPX Research, Inc., Redmond, WA \hfill 6/09-9/12 
-    \vspace{6pt}
-   \begin{itemize} \itemsep -2pt  % reduce space between items
+  \bactivity{Developer/Quant}{RPX Research, Inc., Redmond, WA}{6/09-9/12}
      \item Used time-series models to look for bond/futures market trading strategies 
      \item Built on-line predictive model for high freq price data 
      \item Built and improved existing trading infrastructure
      \item Built strategy backtesting system
-   \end{itemize}
+  \eactivity
 
-  {\bf Process Engineer (Intern)} Boise-Cascade, Pasco, WA \hfill  Summer 08
-    \vspace{6pt}
-  \begin{itemize} \itemsep -2pt %reduce space between items
+  \bactivity{Process Engineer (Intern)}{Boise-Cascade, Pasco, WA}{Summer 08}
     \item Investigated economics and feasibility of three capital projects 
     \item Conducted trial to investigate systemic product quality measurement problems 
-  \end{itemize}
+  \eactivity
 
-  {\bf Process Engineer (Intern)} Boise-Cascade, Pasco, WA \hfill  Summer 07
-    \vspace{6pt}
-  \begin{itemize} \itemsep -2pt
+  \bactivity{Process Engineer (Intern)}{Boise-Cascade, Pasco, WA}{Summer 07}
     \item Investigated maintenance and energy projects for cost effectiveness 
-   \end{itemize}
+  \eactivity
 
-  {\bf Developer (Intern)} Capstone Technology, Camas, WA \hfill  Summer 06
-    \vspace{6pt}
-  \begin{itemize} \itemsep -2pt
+  \bactivity{Developer (Intern)}{Capstone Technology, Camas, WA}{Summer 06}
     \item Improved the stability and interface efficiency of the PARCSuite plant operations management software 
     \item Responsible for the migration of several components of the PARCSuite software from the 1.1 .NET framework to the 2.0 .NET framework 
     \item Thoroughly tested functionality of new software version 
-   \end{itemize}
+  \eactivity
 
   {\bf Researcher (Intern)} Kimberly-Clark, Neenah, WI \hfill  Summer 05
 
 \section{Education} 
-  {\bf University of Washington} \hfill 09 Graduation 
-    \begin{itemize} \itemsep -2pt
+  \bactivity{University of Washington}{}{09}
       \item B.S. in Chemical Engineering
       \item B.S. in Paper Science and Engineering
       \item GPA 3.6, SAT 750 math, 800 verbal
-    \end{itemize}
-  {\bf Self Study} \hfill 10/2012
-    \begin{itemize} \itemsep -2pt
-      \item Worked though two Carnegie Mellon classes (lectures and homeworks; translating from ML to Scala)
-        \item Functional Programming
+  \eactivity
+  \bactivity{Self Study}{}{10/12-current}
+      \item Learned Scala 
+      \item Worked though two Carnegie Mellon courses (lectures and homeworks; translating from ML to Scala)
+      \bitem
+        \item Functional Programming 
+        \bitem
+            \item Basic algorithms
+            \item Parallel and sequential cost semantics
+            \item Program verification
+        \eitem
         \item Parallel \& Sequential Data Structures and Algorithms 
-    \end{itemize}
+      \eitem
+      \item Leaning Hadoop via Twitter's Scalding
+    \eactivity
     
    
   \section{Open Source}
     {\bf Github account} github.com/jsalvatier 
 
-    {\bf \href{https://github.com/pymc-devs/pymc#readme}{Pymc2}} Bayesian inference package (Python) 
-      \vspace{6pt}
-    \begin{itemize} \itemsep -2pt
+    \bactivity{\href{https://github.com/pymc-devs/pymc\#readme}{Pymc2} }{Bayesian inference package (Python)}{}
       \item Overhauled likelihood calculation to automatically provide gradients 
       \item Implemented advanced MCMC samplers which scale better with problem size, self-tune, handle difficult distributions well etc.
       \item Researched numexpr and Cython code generation for likelihoods
       \item Wrote experimental PyMC replacement with drastically simpler and smaller codebase; now slated to be PyMC3
-     \end{itemize}
+    \eactivity
 
-     {\bf \href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}} Wrote an easy to use interface for the Fortran numerical \\
+    {\bf \href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}} Wrote an easy to use interface for the Fortran numerical \\
       boundary value problem solver BVP\_SOLVER \\ 
-      \vspace{6pt}
 
 \end{resume} 
 \end{document} 
