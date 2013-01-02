@@ -8,16 +8,29 @@
 %\usepackage{newcent}   % uses new century schoolbook postscript font 
 \usepackage{hyperref}
 
-\newcommand{\bactivity}[3]{
-  {\bf #1} #2 \hfill #3
-    \vspace{6pt}
-    \begin{itemize} \itemsep -2pt
-      }
-\newcommand{\eactivity}[0]{\end{itemize}}
-
-
 \newcommand{\bitem}{\begin{itemize} \itemsep -2pt}
 \newcommand{\eitem}{\end{itemize} }
+
+
+\newcommand{\hrowbase}[3]{
+  {\bf #1} #2 \hfill #3
+}
+
+\newcommand{\headrow}[3]{
+  \hrowbase{#1}{#2}{#3}
+    \vspace{6pt}
+    \bitem
+      }
+\newcommand{\eheadrow}[0]{\end{itemize}}
+
+
+\newcommand{\headrowdesc}[3]{
+  \hrowbase{#1}{}{#2} \\
+    #3 
+    \vspace{6pt}
+      }
+
+\newcommand{\email}[1]{ \href{mailto:#1}{#1}}
 
 %pretty C++
 \newcommand{\CPP}
@@ -25,84 +38,93 @@
 
 %pretty C#
 \newcommand{\CS}
-{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf \#}}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\#}}
 
 \begin{document} 
- 
-\name{John Salvatier\\[12pt]} % the \\[12pt] adds a blank line after name
+
+\resumewidth=6.5in
+\newsectionwidth{1.0in}
+\name{\LARGE John Salvatier}
 \begin{resume} 
  
 
 \section{Relevant Experience}
-  \bactivity{Developer/Quant}{RPX Research, Inc., Redmond, WA}{6/09-10/12}
+  \headrow{Developer/Quant}{RPX Research, Inc., Redmond, WA}{6/2009--10/2012}
      \item Developed on-line predictive model for high-frequency bond price data for trading algorithms (\CS)
      \item Developed time-series models to look for profitable bond, futures and equity market trading strategies (Python) 
-     \item Developed system for tracking trading performance and environment metrics (\CS)
+     \item Developed system for generating and tracking trading performance and environment metrics (\CS)
      \item Built system for evaluating bond, futures and equity trading strategies against historical market data (\CS) 
-     \item Added high-frequency price collection to data collection infrastructure
+     \item Added high-frequency price collection to data collection infrastructure (\CS)
      \item Built and improved-existing automated trading infrastructure (\CS)
-  \eactivity
+  \eheadrow
 
-    \bactivity{Developer (Intern)}{Capstone Technology, Camas, WA}{Summer 06}
-    \item Improved stability and interface efficiency of PARCSuite plant operations management software in \CS\
+  \headrow{Developer (Intern)}{Capstone Technology, Camas, WA}{Summer 2006}
+    \item Improved stability and interface efficiency of PARCSuite plant operations management software (\CS)
     \item Responsible for the migration of several components of the PARCSuite software from the 1.1 .NET framework to the 2.0 .NET framework 
-  \eactivity
+  \eheadrow
 
- \section{Open Source}
+ \section{Open \\
+          Source}
  {\bf Github account} \href{https://github.com/jsalvatier}{github.com/jsalvatier}
 
-    \bactivity{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC}}{Bayesian inference package (Python)}{10-current}
-      \item Overhauled likelihood calculation to automatically provide gradients 
-      \item {\href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}}
-      \item {\href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation for likelihoods}}
-      \item {\href{https://github.com/pymc-devs/pymc/commits/pymc3}{Wrote experimental PyMC 2 replacement with dramatically simpler, smaller and more powerful codebase, which will soon replace PyMC 2 and become PyMC 3}}
-    \eactivity
+    \headrow{\href{https://github.com/pymc-devs/pymc/commits/pymc3\#readme}{PyMC 3.0}}{Bayesian inference package (Python)}{2012--current}
+      \item \href{https://github.com/pymc-devs/pymc/commits/pymc3}{Developed PyMC 2.2 replacement with dramatically simpler, smaller and more powerful codebase, which will soon replace PyMC 2.2 and become PyMC 3.0}
+    \eheadrow
 
-    {\bf \href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}} \hfill  09\\
+    \headrow{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC 2.0}}{Bayesian inference package (Python)}{2010--2012}
+      \item Overhauled likelihood calculation to automatically provide gradients 
+      \item \href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}
+      \item \href{http://pypi.python.org/pypi/multichain\_mcmc}{Developed PyMC extension allowing for multiple chain samplers}
+      \item \href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation for likelihoods}
+    \eheadrow
+
+    \headrowdesc{\href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}}{2009}{
       Built and currently maintain a user-friendly interface for the Fortran numerical \\
-      boundary value problem solver BVP\_SOLVER 
+    boundary value problem solver BVP\_SOLVER}
 
 \section{Self-Study}
- \bactivity{Self-Study}{}{10/12-current}
-      \item Completed all lectures and homework for two Carnegie Mellon courses.  (translating from ML to Scala)
-      \bitem
-        \item Functional Programming 
-        \item Parallel \& Sequential Data Structures and Algorithms 
-      \eitem
-      \item Learning Hadoop via Twitter's Scalding, by implementing parallel Scan function for hadoop
-    \eactivity
+    \headrowdesc{Carnegie Mellon Courses}{10/2012--12/2012}{Completed all lectures and homework for two courses. Courses were \\
+    designed for ML, but I completed them in Scala.} 
+    \bitem
+      \item \href{http://www.cs.cmu.edu/~15150/previous-semesters/2012-spring/}{15-150: Functional Programming}
+      \item \href{http://www.cs.cmu.edu/~15210/index.html}{15-210: Parallel \& Sequential Data Structures and Algorithms}
+    \eitem
+    \headrowdesc{Hadoop}{12/2012--current}{Learning Hadoop via Twitter's Scalding, by implementing parallel \\
+      Scan function for Scalding}
 
- 
 \section{Skills}
     \bitem
       \item Fluent in \CS, Python, Scala
-      \item Familiar with Java, Haskell, ML, C, \CPP, R, \LaTeX\ and others
-      \item Experienced with Bayesian statistical modeling (MCMC)
+      \item Experience with Java, Haskell, ML, C, \CPP, R, \LaTeX\ and others
+      \item Experienced with Bayesian statistical modeling (Markov Chain Monte-carlo)
       \item Well-versed in economics and decision theory
       \item Skilled at technical writting
       \item Fluent in Spanish 
     \eitem
 
 \section{Education} 
-  \bactivity{University of Washington}{}{09}
+  \headrow{University of Washington}{}{2009}
       \item B.S. in Chemical Engineering
       \item B.S. in Paper Science and Engineering
-  \eactivity
+  \eheadrow
     
 \section{Other \\ Experience}
-    \bactivity{Process Engineer (Intern)}{Boise-Cascade, Pasco, WA}{Summer 08}
+    \headrow{Process Engineer (Intern)}{Boise-Cascade, Pasco, WA}{Summer 2008}
       \item Investigated economics and feasibility of three capital projects 
       \item Conducted trial to investigate systemic product quality measurement problems 
-    \eactivity
+    \eheadrow
 
-    \bactivity{Process Engineer (Intern)}{Boise-Cascade, Pasco, WA}{Summer 07}
+    \headrow{Process Engineer (Intern)}{Boise-Cascade, Pasco, WA}{Summer 2007}
       \item Investigated maintenance and energy projects for cost effectiveness 
-    \eactivity
+    \eheadrow
 
-    {\bf Researcher (Intern)} Kimberly-Clark, Neenah, WI \hfill  Summer 05
+    {\bf Researcher (Intern)} Kimberly-Clark, Neenah, WI \hfill  Summer 2005
+
+\section{Contact}
+     Phone: 360-602-1069 \\
+     Email: \email{jsalvatier@gmail.com}
+
 
 \end{resume} 
 \end{document} 
-
-
 
