@@ -8,8 +8,8 @@
 %\usepackage{newcent}   % uses new century schoolbook postscript font 
 \usepackage{hyperref}
 
-\newcommand{\bitem}{\begin{itemize} \itemsep -2pt}
-\newcommand{\eitem}{\end{itemize} }
+\newcommand{\bitem}{\begin{samepage}\begin{itemize} \itemsep -2pt}
+\newcommand{\eitem}{\end{itemize}\end{samepage} }
 
 
 \newcommand{\hrowbase}[3]{
@@ -21,12 +21,12 @@
     \vspace{6pt}
     \bitem
       }
-\newcommand{\eheadrow}[0]{\end{itemize}}
+\newcommand{\eheadrow}[0]{\eitem}
 
 
 \newcommand{\headrowdesc}[3]{
-  \hrowbase{#1}{}{#2} \\
-    #3 
+  \hrowbase{#1}{}{#2} \ \\
+    #3
     \vspace{6pt}
       }
 
@@ -50,9 +50,9 @@
 
 \section{Relevant Experience}
   \headrow{Developer/Quant}{RPX Research, Inc., Redmond, WA}{6/2009--10/2012}
-     \item Developed on-line predictive model for high-frequency bond price data for trading algorithms (\CS)
-     \item Developed time-series models to look for profitable bond, futures and equity market trading strategies (Python) 
-     \item Developed system for generating and tracking trading performance and environment metrics (\CS)
+     \item Engineered on-line high-frequency predictive bond price model for trading algorithms (\CS)
+     \item Engineered time-series models to look for profitable bond, futures and equity market trading strategies (Python) 
+     \item Engineered system for generating and tracking trading performance metrics (\CS)
      \item Built system for evaluating bond, futures and equity trading strategies against historical market data (\CS) 
      \item Added high-frequency price collection to data collection infrastructure (\CS)
      \item Built and improved-existing automated trading infrastructure (\CS)
@@ -63,18 +63,17 @@
     \item Responsible for the migration of several components of the PARCSuite software from the 1.1 .NET framework to the 2.0 .NET framework 
   \eheadrow
 
- \section{Open \\
-          Source}
+ \section{Open Source}
  {\bf Github account} \href{https://github.com/jsalvatier}{github.com/jsalvatier}
 
     \headrow{\href{https://github.com/pymc-devs/pymc/commits/pymc3\#readme}{PyMC 3.0}}{Bayesian inference package (Python)}{2012--current}
-      \item \href{https://github.com/pymc-devs/pymc/commits/pymc3}{Developed PyMC 2.2 replacement with dramatically simpler, smaller and more powerful codebase, which will soon replace PyMC 2.2 and become PyMC 3.0}
+      \item \href{https://github.com/pymc-devs/pymc/commits/pymc3}{Engineered PyMC 2.2 replacement with dramatically simpler, smaller and more powerful codebase, which will soon replace PyMC 2.2 and become PyMC 3.0}
     \eheadrow
 
     \headrow{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC 2.0}}{Bayesian inference package (Python)}{2010--2012}
       \item Overhauled likelihood calculation to automatically provide gradients 
       \item \href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}
-      \item \href{http://pypi.python.org/pypi/multichain\_mcmc}{Developed PyMC extension allowing for multiple chain samplers}
+      \item \href{http://pypi.python.org/pypi/multichain\_mcmc}{Engineered PyMC extension allowing for multiple chain samplers}
       \item \href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation for likelihoods}
     \eheadrow
 
@@ -118,7 +117,7 @@
       \item Investigated maintenance and energy projects for cost effectiveness 
     \eheadrow
 
-    {\bf Researcher (Intern)} Kimberly-Clark, Neenah, WI \hfill  Summer 2005
+    \hrowbase{Researcher (Intern)}{Kimberly-Clark, Neenah, WI}{Summer 2005 }
 
 \section{Contact}
      Phone: 360-602-1069 \\
