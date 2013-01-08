@@ -6,7 +6,7 @@
 \textwidth=5.2in % increase textwidth to get smaller right margin
 %\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
 %\usepackage{newcent}   % uses new century schoolbook postscript font 
-\usepackage{hyperref}
+\usepackage{xcolor,hyperref}
 
 \newcommand{\bitem}{\begin{samepage}\begin{itemize} \itemsep -2pt}
 \newcommand{\eitem}{\end{itemize}\end{samepage} }
@@ -32,6 +32,10 @@
 
 \newcommand{\email}[1]{ \href{mailto:#1}{#1}}
 
+\definecolor{marineblue2}{rgb}{0.05,0.1,0.5}
+\colorlet{linkcol}{marineblue2}
+\hypersetup{colorlinks,breaklinks,linkcolor=linkcol,urlcolor=linkcol,anchorcolor=linkcol,citecolor=linkcol}
+
 %pretty C++
 \newcommand{\CPP}
 {C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
@@ -51,7 +55,7 @@
 \section{Relevant Experience}
   \headrow{Developer/Quant}{RPX Research, Inc., Redmond, WA}{6/2009--10/2012}
      \item Engineered on-line, high-frequency, predictive price model for a bond trading algorithm (\CS)
-     \item Engineered time-series models to look for profitable bond, futures and equity market trading strategies (Python) 
+     \item Engineered time-series models to look for profitable bond, futures and equity market trading strategies (\CS, Python) 
      \item Engineered system for generating and tracking trading performance metrics (\CS)
      \item Built system for evaluating bond, futures and equity trading strategies against historical market data (\CS) 
      \item Added high-frequency price collection to data collection infrastructure (\CS)
@@ -85,7 +89,7 @@
     \headrowdesc{Carnegie Mellon Courses}{10/2012--12/2012}{Completed all lectures and homework for two courses. Courses were \\
     designed for ML, but I completed them in Scala.} 
     \bitem
-      \item \href{http://www.cs.cmu.edu/~15150/previous-semesters/2012-spring/}{15-150: Functional Programming}
+\item \href{http://www.cs.cmu.edu/~15150/previous-semesters/2012-spring/}{15-150: Functional Programming}
       \item \href{http://www.cs.cmu.edu/~15210/index.html}{15-210: Parallel \& Sequential Data Structures and Algorithms}
     \eitem
     \headrowdesc{Hadoop}{12/2012--Present}{Learning Hadoop via Twitter's Scalding, by implementing parallel \\
