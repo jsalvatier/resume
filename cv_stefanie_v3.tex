@@ -1,6 +1,6 @@
 \documentclass[11pt,a4paper]{moderncv}
 \moderncvtheme[red]{classic}
-%\usepackage{enumitem}
+\usepackage{enumitem}
 \usepackage[utf8]{inputenc}
 \usepackage[scale=0.8]{geometry}
 \recomputelengths
@@ -19,7 +19,7 @@
 \newcommand{\CS}
 {C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\#}}
 
-\newcommand{\bitem}{\begin{samepage}\begin{itemize} \itemsep -2pt}
+\newcommand{\bitem}{\begin{samepage}\begin{itemize} \itemsep -2pt \setlength{\itemindent}{1em}}
 \newcommand{\eitem}{\end{itemize}\end{samepage} }
 
 \newcommand{\entry}[6]
@@ -35,6 +35,7 @@
 }
 
 
+
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
@@ -45,18 +46,19 @@
 %\address{1900 NE 68th St}{98115 Seattle, WA}
 \phone{360-602-1069}
 \email{jsalvatier@gmail.com}
+\homepage{github.com/jsalvatier}
 
 
 \begin{document}
 \maketitle
 \section{Relevant Experience}
     \entry{2009 -- 10/2012}{Developer/Quant}{RPX Research, Inc.}{Redmond, WA}{}{
-        \item Engineered on-line, high-frequency, predictive price model for a bond trading algorithm (\CS)
+        \item Engineered on-line, high-frequency, price model for a bond trading algorithm (\CS)
         \item Engineered time-series models to look for profitable bond, futures and equity market trading strategies (\CS, Python)
-        \item Engineered system for generating and tracking trading performance metrics (\CS)
-        \item Built system for evaluating bond, futures and equity trading strategies against historical market data (\CS) 
-        \item Added high-frequency price collection to data collection infrastructure (\CS)
-        \item Built and improved-existing automated trading infrastructure (\CS)
+        \item Engineered system for generating and tracking trading performance metrics 
+        \item Built system for evaluating bond, futures and equity trading strategies against historical market data  
+        \item Added high-frequency price collection to data collection infrastructure 
+        \item Built and improved-existing automated trading infrastructure 
     }
 
     \entry{Summer 2006}{Developer (Intern)}{Capstone Technology}{Camas, WA}{}{
@@ -66,19 +68,18 @@
 \closesection{}
 
 \section{Open Source}
-    \cventry{}{Github account}{}{\href{https://github.com/jsalvatier}{github.com/jsalvatier}}{}{}
-
     \cventry{2012 -- }{\href{https://github.com/pymc-devs/pymc/commits/pymc3\#readme}{PyMC 3.0}}{Bayesian inference package (Python)}{}{}{}
         \cvline{}{\href{https://github.com/pymc-devs/pymc/commits/pymc3}{
         Engineered PyMC 2.2 replacement with dramatically simpler, smaller and more powerful codebase, which will soon replace PyMC 2.2 and become PyMC 3.0}}
 
-    \cventry{2010 -- 2012}{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC 2.0}}{Bayesian inference package (Python)}{}{}{}
-        \cvline{}{Overhauled likelihood calculation to automatically provide gradients }
-        \cvline{}{\href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}}
-        \cvline{}{\href{http://pypi.python.org/pypi/multichain\_mcmc}{Engineered PyMC extension allowing for multiple chain samplers}}
-        \cvline{}{\href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation for likelihoods}}
+    \entry{2010 -- 2012}{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC 2.0}}{Bayesian inference package (Python, C, Fortran)}{}{}{
+        \item Overhauled likelihood calculation to automatically provide gradients 
+        \item \href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}
+        \item \href{http://pypi.python.org/pypi/multichain\_mcmc}{Engineered PyMC extension allowing for multiple chain samplers}
+        \item \href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation for likelihoods}
+    }
 
-    \cventry{2009}{\href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}}{}{}{}{
+    \cventry{2009}{\href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}}{(Python, Fortran)}{}{}{
         Built and presently maintain a user-friendly interface for the Fortran numerical \\
         boundary value problem solver BVP\_SOLVER
         }
@@ -87,26 +88,27 @@
 
 \section{Self-Study}
     \cventry{10 -- 12/2012}{Carnegie Mellon Courses}{}{}{}{
-        Completed all lectures and homework for two courses. Courses were designed for Standard ML, but I completed them in Scala.}
-        \cvline{}{\href{http://www.cs.cmu.edu/~15150/previous-semesters/2012-spring/}{15-150: Functional Programming}}
-        \cvline{}{\href{http://www.cs.cmu.edu/~15210/index.html}{15-210: Parallel \& Sequential Data Structures and Algorithms}}
+        Completed all lectures and homework for two courses. Courses were designed for Standard ML, but I completed them in Scala.
+        \bitem
+        \item \href{http://www.cs.cmu.edu/~15150/previous-semesters/2012-spring/}{15-150: Functional Programming}
+        \item \href{http://www.cs.cmu.edu/~15210/index.html}{15-210: Parallel \& Sequential Data Structures and Algorithms}
+            \eitem
+        }
     \cventry{12/2012 -- }{Hadoop}{}{}{}{
-        Learning Hadoop via Twitter's Scalding, by implementing parallel \\
-        Scan function for Scalding
+        Learning Hadoop via Twitter's Scalding, by implementing parallel prefix-sum function
     }
 
 \closesection{}
 
-\section{Skills}
-    \subsection{Languages}
-        \cvline{Fluent}{\CS, Python, Scala}
-        \cvline{Experienced}{Java, Haskell, Standard ML, C, \CPP, R, \LaTeX\ and others}
+\pagebreak
 
-    \subsection{Other}
-        \cvline{}{Experienced with Bayesian statistical modeling (Markov Chain Monte-carlo)}
-        \cvline{}{Well-versed in economics and decision theory}
-        \cvline{}{Skilled at technical writting}
-        \cvline{}{Fluent in Spanish}
+\section{Technical}
+    \cvlistitem{Fluent with \CS, Python, Scala}
+    \cvlistitem{Experienced with Java, Haskell, Standard ML, C, \CPP, Fortran, R, \LaTeX\ and others}
+    \cvlistitem{Experienced with Bayesian statistical modeling (Markov Chain Monte-carlo)}
+    \cvlistitem{Well-versed in economics and decision theory}
+    \cvlistitem{Skilled at technical writting}
+    \cvlistitem{Fluent in Spanish}
 
 \closesection{}
 \section{Education} 
