@@ -1,133 +1,129 @@
-% LaTeX file for resume 
-% This file uses the resume document class (res.cls)
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvtheme[red]{classic}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.8]{geometry}
+\recomputelengths
+\usepackage{enumitem}
 
-\documentclass[margin]{res}
-% the margin option causes section titles to appear to the left of body text 
-\textwidth=5.2in % increase textwidth to get smaller right margin
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font 
-\usepackage{xcolor,hyperref}
-
-\newcommand{\bitem}{\begin{samepage}\begin{itemize} \itemsep -2pt}
-\newcommand{\eitem}{\end{itemize}\end{samepage} }
-
-
-\newcommand{\hrowbase}[3]{
-  {\bf #1} #2 \hfill #3
+\AfterPreamble{
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
 }
-
-\newcommand{\headrow}[3]{
-  \hrowbase{#1}{#2}{#3}
-    \vspace{6pt}
-    \bitem
-      }
-\newcommand{\eheadrow}[0]{\eitem}
-
-
-\newcommand{\headrowdesc}[3]{
-  \hrowbase{#1}{}{#2} \ \\
-    #3
-    \vspace{6pt}
-      }
-
-\newcommand{\email}[1]{ \href{mailto:#1}{#1}}
-
-\definecolor{marineblue2}{rgb}{0.05,0.1,0.5}
-\colorlet{linkcol}{marineblue2}
-\hypersetup{colorlinks,breaklinks,linkcolor=linkcol,urlcolor=linkcol,anchorcolor=linkcol,citecolor=linkcol}
 
 %pretty C++
 \newcommand{\CPP}
-{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize ++}}
 
 %pretty C#
 \newcommand{\CS}
 {C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\#}}
 
-\begin{document} 
+\newcommand{\bitem}{\begin{samepage}\begin{itemize} \itemsep -2pt \setlength{\itemindent}{1em}}
+\newcommand{\eitem}{\end{itemize}\end{samepage} }
 
-\resumewidth=6.5in
-\newsectionwidth{1.0in}
-\name{\LARGE John Salvatier}
-\begin{resume} 
- 
+\newcommand{\entry}[6]
+{\cventry{#1}{#2}{#3}{#4}{#5}{
+    \bitem 
+    #6
+    \eitem
+    }
+}
 
+\newcommand{\itemc}[5]
+{\cventry{#4}{#1}{#2}{#3}{}{#5}
+}
+
+
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+
+% personal data
+\firstname{John}
+\familyname{Salvatier}
+%\address{1900 NE 68th St}{98115 Seattle, WA}
+\phone{360-602-1069}
+\email{jsalvatier@gmail.com}
+\homepage{github.com/jsalvatier}
+
+
+\begin{document}
+\maketitle
+\vspace*{-5mm}
 \section{Relevant Experience}
-  \headrow{Developer/Quant}{RPX Research, Inc., Redmond, WA}{6/2009--10/2012}
-     \item Engineered on-line, high-frequency, predictive price model for a bond trading algorithm (\CS)
-     \item Engineered time-series models to look for profitable bond, futures and equity market trading strategies (\CS, Python) 
-     \item Engineered system for generating and tracking trading performance metrics 
-     \item Built system for evaluating bond, futures and equity trading strategies against historical market data  
-     \item Added high-frequency price collection to data collection infrastructure 
-     \item Built and improved-existing automated trading infrastructure 
-  \eheadrow
+    \entry{2009 -- 10/2012}{Developer/Quant}{RPX Research, Inc.}{Redmond, WA}{}{
+        \item Engineered on-line, high-frequency, price model for a bond trading algorithm (\CS)
+        \item Engineered time-series models to look for profitable bond, futures and equity market trading strategies (\CS, Python)
+        \item Engineered system for generating and tracking trading performance metrics 
+        \item Built system for evaluating bond, futures and equity trading strategies against historical market data  
+        \item Added high-frequency price collection to data collection infrastructure 
+        \item Built and improved-existing automated trading infrastructure 
+    }
 
-  \headrow{Developer (Intern)}{Capstone Technology, Camas, WA}{Summer 2006}
-    \item Improved stability and interface efficiency of PARCSuite plant operations management software (\CS)
-    \item Responsible for the migration of several components of the PARCSuite software from the 1.1 .NET framework to the 2.0 .NET framework 
-  \eheadrow
+    \entry{Summer 2006}{Developer (Intern)}{Capstone Technology}{Camas, WA}{}{
+        \item Improved stability and interface efficiency of PARCSuite plant operations management software (\CS)
+        \item Responsible for the migration of several components of the PARCSuite software from the 1.1 .NET framework to the 2.0 .NET framework 
+    }
+\closesection{}
 
- \section{Open Source}
- {\bf Github account} \href{https://github.com/jsalvatier}{github.com/jsalvatier}
+\section{Open Source}
+    \cventry{2012 -- }{\href{https://github.com/pymc-devs/pymc/commits/pymc3\#readme}{PyMC 3.0}}{Bayesian inference package (Python)}{}{}{}
+        \cvline{}{\href{https://github.com/pymc-devs/pymc/commits/pymc3}{
+        Engineered PyMC 2.2 replacement with dramatically simpler, smaller and more powerful codebase, which will soon replace PyMC 2.2 and become PyMC 3.0}}
 
-    \headrow{\href{https://github.com/pymc-devs/pymc/commits/pymc3\#readme}{PyMC 3.0}}{Bayesian inference package (Python)}{2012--Present}
-      \item \href{https://github.com/pymc-devs/pymc/commits/pymc3}{Engineered PyMC 2.2 replacement with dramatically simpler, smaller and more powerful codebase, which will soon replace PyMC 2.2 and become PyMC 3.0}
-    \eheadrow
+    \entry{2010 -- 2012}{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC 2.0}}{Bayesian inference package (Python, C, Fortran)}{}{}{
+        \item Overhauled likelihood calculation to automatically provide gradients 
+        \item \href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}
+        \item \href{http://pypi.python.org/pypi/multichain\_mcmc}{Engineered PyMC extension allowing for multiple chain samplers}
+        \item \href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation for likelihoods}
+    }
 
-    \headrow{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC 2.0}}{Bayesian inference package (Python)}{2010--2012}
-      \item Overhauled likelihood calculation to automatically provide gradients 
-      \item \href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}
-      \item \href{http://pypi.python.org/pypi/multichain\_mcmc}{Engineered PyMC extension allowing for multiple chain samplers}
-      \item \href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation for likelihoods}
-    \eheadrow
+    \cventry{2009}{\href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}}{(Python, Fortran)}{}{}{
+        Built and presently maintain a user-friendly interface for the Fortran numerical \\
+        boundary value problem solver BVP\_SOLVER
+        }
 
-    \headrowdesc{\href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}}{2009}{
-      Built and presently maintain a user-friendly interface for the Fortran numerical \\
-    boundary value problem solver BVP\_SOLVER}
+\closesection{}
 
 \section{Self-Study}
-    \headrowdesc{Carnegie Mellon Courses}{10/2012--12/2012}{Completed all lectures and homework for two courses. Courses were \\
-    designed for ML, but I completed them in Scala.} 
-    \bitem
-\item \href{http://www.cs.cmu.edu/~15150/previous-semesters/2012-spring/}{15-150: Functional Programming}
-      \item \href{http://www.cs.cmu.edu/~15210/index.html}{15-210: Parallel \& Sequential Data Structures and Algorithms}
-    \eitem
-    \headrowdesc{Hadoop}{12/2012--Present}{Learning Hadoop via Twitter's Scalding, by implementing parallel \\
-      Scan function for Scalding}
+    \cventry{10 -- 12/2012}{Carnegie Mellon Courses}{}{}{}{
+        Completed all lectures and homework for two courses. Courses were designed for Standard ML, but I completed them in Scala.
+        \bitem
+        \item \href{http://www.cs.cmu.edu/~15150/previous-semesters/2012-spring/}{15-150: Functional Programming}
+        \item \href{http://www.cs.cmu.edu/~15210/index.html}{15-210: Parallel \& Sequential Data Structures and Algorithms}
+            \eitem
+        }
 
-\section{Skills}
-    \bitem
-      \item Fluent in \CS, Python, Scala
-      \item Experience with Java, Haskell, ML, C, \CPP, R, \LaTeX\ and others
-      \item Experienced with Bayesian statistical modeling (Markov Chain Monte-carlo)
-      \item Well-versed in economics and decision theory
-      \item Skilled at technical writing
-      \item Fluent in Spanish 
-    \eitem
+\closesection{}
 
+\section{Technical}
+\cvitem{}{\vspace{-24pt}
+    \begin{samepage}\begin{itemize} \itemsep -2pt \setlength{\itemindent}{0em}
+    \item Fluent with \CS, Python, Scala
+    \item Experienced with Java, Haskell, Standard ML, C, \CPP, Fortran, R, \LaTeX\ and others
+    \item Experienced with Bayesian statistical modeling (Markov Chain Monte-carlo)
+    \item Well-versed in economics and decision theory
+    \item Skilled at technical writing
+    \item Fluent in Spanish
+        \eitem
+}
+
+\closesection{}
 \section{Education} 
-  \headrow{University of Washington}{}{2009}
-      \item B.S. in Chemical Engineering
-      \item B.S. in Paper Science and Engineering
-  \eheadrow
+    \cventry{2009}{University of Washington}{B.S. in Chemical Engineering}{}{}{}
+    \cventry{2009}{University of Washington}{B.S. in Paper Science and Engineering}{}{}{}
     
-\section{Other \\ Experience}
-    \headrow{Process Engineer (Intern)}{Boise-Cascade, Pasco, WA}{Summer 2008}
-      \item Investigated economics and feasibility of three capital projects 
-      \item Conducted trial to investigate systemic product quality measurement problems 
-    \eheadrow
+\closesection{}
+\section{Other Experience}
+    \cventry{Summer 2008}{Process Engineer (Intern)}{Boise-Cascade}{Pasco, WA}{}{}
+        \cvline{}{Investigated economics and feasibility of three capital projects}
+        \cvline{}{Conducted trial to investigate systemic product quality measurement problems}
 
-    \headrow{Process Engineer (Intern)}{Boise-Cascade, Pasco, WA}{Summer 2007}
-      \item Investigated maintenance and energy projects for cost effectiveness 
-    \eheadrow
+    \cventry{Summer 2007}{Process Engineer (Intern)}{Boise-Cascade}{Pasco, WA}{}{}
+        \cvline{}{Investigated maintenance and energy projects for cost effectiveness }
 
-    \hrowbase{Researcher (Intern)}{Kimberly-Clark, Neenah, WI}{Summer 2005 }
-
-\section{Contact}
-     Phone: 360-602-1069 \\
-     Email: \email{jsalvatier@gmail.com}
-
-
-\end{resume} 
-\end{document} 
-
+    \cventry{Summer 2005}{Researcher (Intern)}{Kimberly-Clark}{Neenah, WI}{}{}
+\closesection{}
+\end{document}
