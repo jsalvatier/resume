@@ -2,7 +2,7 @@
 \moderncvtheme[red]{classic}
 \usepackage{enumitem}
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.8]{geometry}
+\usepackage[margin=.85in, scale=0.8]{geometry}
 \recomputelengths
 \usepackage{enumitem}
 
@@ -19,8 +19,8 @@
 \newcommand{\CS}
 {C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\#}}
 
-\newcommand{\bitem}{\begin{samepage}\begin{itemize} \itemsep -2pt \setlength{\itemindent}{1em}}
-\newcommand{\eitem}{\end{itemize}\end{samepage} }
+\newcommand{\bitem}{\begin{samepage}\begin{itemize}[leftmargin=*, labelindent=8pt, itemsep=-1pt]}
+\newcommand{\eitem}{\end{itemize}\end{samepage}}
 
 \newcommand{\entry}[6]
 {\cventry{#1}{#2}{#3}{#4}{#5}{
@@ -53,7 +53,7 @@
 \maketitle
 \vspace*{-5mm}
 \section{Relevant Experience}
-    \entry{2009 -- 10/2012}{Developer/Quant}{RPX Research, Inc.}{Redmond, WA}{}{
+    \entry{2009 -- 10/2012}{Developer/Quantiative Analyst}{RPX Research, Inc.}{Redmond, WA}{}{
         \item Engineered on-line, high-frequency, price model for a bond trading algorithm (\CS)
         \item Engineered time-series models to look for profitable bond, futures and equity market trading strategies (\CS, Python)
         \item Engineered system for generating and tracking trading performance metrics 
@@ -99,10 +99,11 @@
 \closesection{}
 
 \section{Technical}
-\cvitem{}{\vspace{-24pt}
-    \begin{samepage}\begin{itemize} \itemsep -2pt \setlength{\itemindent}{0em}
+    \vspace{-24pt}
+\cvitem{}{
+    \begin{samepage}\begin{itemize}[leftmargin=*, itemsep=-2pt]
     \item Fluent with \CS, Python, Scala
-    \item Experienced with Java, Haskell, Standard ML, C, \CPP, Fortran, R, \LaTeX\ and others
+    \item Experienced with Java, Haskell, Standard ML, C, \CPP, Fortran, R, \LaTeX\ 
     \item Experienced with Bayesian statistical modeling (Markov Chain Monte-carlo)
     \item Well-versed in economics and decision theory
     \item Skilled at technical writing
