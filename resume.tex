@@ -54,12 +54,20 @@
 \vspace*{-5mm}
 \section{Relevant Experience}
     \entry{2009 -- 10/2012}{Developer/Quantitative Analyst}{RPX Research, Inc.}{Redmond, WA}{}{
-        \item Engineered on-line, high-frequency, price model for a bond trading algorithm (\CS)
-        \item Engineered time-series models to look for profitable bond, futures and equity market trading strategies (\CS, Python)
-        \item Engineered system for generating and tracking trading performance metrics 
-        \item Built system for evaluating bond, futures and equity trading strategies against historical market data  
-        \item Added high-frequency price collection to data collection infrastructure 
-        \item Built and improved-existing automated trading infrastructure 
+        \item Engineered on-line, high-frequency (10ms), price model for a bond trading algorithm with continuous updating, extendible model and data-feed specific tuning (\CS)
+        \item Engineered price, trade and volatility time-series models for large datasets in search of bond, futures and equity market trading strategies using SQL, NumPy and PyMC (\CS, Python)
+        \item Engineered system for creating and visualizing trading performance metrics using SQL and MSChart and with higher-order function based extensions  
+        \item Built system for evaluating bond, futures and equity trading strategies against historical market data by simulating real time trading 
+        \item Added high-frequency price data to data collection infrastructure 
+    }
+    \cventry{2012}{Statistical Consulting}{}{}{}{
+        Corporate bond default model
+        \vspace*{-4pt}
+        \bitem
+        \item Bayesian proportional-hazards model with a latent, time-varying, financial-fragility factor 
+        \item Multi-level effects
+        \item Fit numerically using two-layer Hamiltonian Monte-Carlo
+            \eitem
     }
 
     \entry{Summer 2006}{Developer (Intern)}{Capstone Technology}{Camas, WA}{}{
@@ -69,15 +77,22 @@
 \closesection{}
 
 \section{Open Source}
-    \cventry{2012 -- }{\href{https://github.com/pymc-devs/pymc/commits/pymc3\#readme}{PyMC 3.0}}{Bayesian inference package (Python)}{}{}{}
-        \cvline{}{\href{https://github.com/pymc-devs/pymc/commits/pymc3}{
-        Engineered PyMC 2.2 replacement with dramatically simpler, smaller and more powerful code-base, which will soon replace PyMC 2.2 and become PyMC 3.0}}
+    \cventry{2012 -- }{\href{https://github.com/pymc-devs/pymc/commits/pymc3\#readme}{PyMC 3.0}}{Bayesian inference package (Python)}{}{}{
+        \href{https://github.com/pymc-devs/pymc/commits/pymc3}{
+        Engineered PyMC 2.2 Theano based replacement with dramatically simpler, smaller and more powerful code-base, which will soon replace PyMC 2.2 and become PyMC 3.0}
+    }
 
     \entry{2010 -- 2012}{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC 2.0}}{Bayesian inference package (Python, C, Fortran)}{}{}{
-        \item Overhauled likelihood calculation to automatically provide gradients 
+        \item Added Automatic Differentiation for likelihoods
         \item \href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}
         \item \href{http://pypi.python.org/pypi/multichain\_mcmc}{Engineered PyMC extension allowing for multiple chain samplers}
-        \item \href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation for likelihoods}
+        \item \href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation using Jinja2 templating for likelihoods}
+    }
+    \cventry{2012}{NumPy}{(C)}{}{}{
+        \href{https://github.com/numpy/numpy/pull/377}{Patch adding advanced indexing interface to NumPy's C-API}
+    }
+    \cventry{2012}{Theano}{(Python, C)}{}{}{
+        \href{https://github.com/Theano/Theano/pull/1083}{Patch adding fast advanced indexing and gradient support}
     }
 
     \cventry{2009}{\href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}}{(Python, Fortran)}{}{}{
@@ -106,7 +121,7 @@
     \begin{samepage}\begin{itemize}[leftmargin=*, itemsep=-2pt]
     \item Fluent with \CS, Python, Scala
     \item Experienced with Java, Haskell, Standard ML, C, \CPP, Fortran, R, \LaTeX\ 
-    \item Experienced with Bayesian statistical modeling (Markov Chain Monte-Carlo)
+    \item Fluent with Bayesian statistical modeling and sophisticated Monte-Carlo sampling
     \item Well-versed in economics and decision theory
     \item Skilled at technical writing
     \item Fluent in Spanish
