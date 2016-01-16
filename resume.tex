@@ -52,8 +52,47 @@
 \begin{document}
 \maketitle
 \vspace*{-5mm}
-\section{Relevant Experience}
-    \entry{4/2013 -- current}{Software Development Engineer II}{Amazon.com, Inc.}{Seattle, WA}{}{
+
+\section{Open Source}
+    \cventry{2012 -- current}{\href{https://github.com/pymc-devs/pymc/commits/pymc3\#readme}{PyMC 3.0}}{Bayesian inference package (Python)}{}{}{
+        \item Lead author of PyMC 2.2 Theano based replacement with dramatically simpler, smaller and more powerful code-base, which will soon replace PyMC 2.2 and become PyMC 3.0}
+        \item Engineered transparent missing value imputation 
+        \item Engineered automatic transformations for constrained variables to be unconstrained for more efficient training
+        \item Lead author on Probabilistic Programming in Python using PyMC (2016, forthcoming)
+        \item \href{https://www.youtube.com/watch?v=VVbJ4jEoOfU}{Presented on PyMC3 at PyDataConf Seattle 2015}
+    }
+
+    \cventry{Jan 2016}{\href{https://github.com/jsalvatier/deep-go/}{Deep-Go}}{Replicating Google's Go Neural Net (Lua/Torch)}{}{}{
+        \href{https://github.com/jsalvatier/deep-go/}{
+        Replicating Move Evaluation in Go Using Deep Convolutional Neural Networks (2014) and exploring different models and training strategies.
+        \bibitem{notes} Madison (2014)  {\em Move Evaluation in Go Using Deep Convolutional Neural Networks} arXiv.org, http://arxiv.org/abs/1412.6564.
+    }
+
+    \entry{2010 -- 2012}{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC 2.0}}{Bayesian inference package (Python, C, Fortran)}{}{}{
+        \item Added Automatic Differentiation for likelihoods
+        \item \href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}
+        \item \href{http://pypi.python.org/pypi/multichain\_mcmc}{Engineered PyMC extension allowing for multiple chain samplers}
+        \item \href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation using Jinja2 templating for likelihoods}
+    }
+    \cventry{2012}{NumPy}{(C)}{}{}{
+        \href{https://github.com/numpy/numpy/pull/377}{Patch adding advanced indexing interface to NumPy's C-API}
+    }
+    \cventry{2012}{Theano}{(Python, C)}{}{}{
+        \href{https://github.com/Theano/Theano/pull/1083}{Patch adding fast advanced indexing and gradient support}
+    }
+
+    \cventry{2009}{\href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}}{(Python, Fortran)}{}{}{
+        Built and presently maintain a user-friendly interface for the Fortran numerical \\
+        boundary value problem solver BVP\_SOLVER
+        }
+
+\section{Experience}
+    \entry{10/2015 -- current}{Researcher}{AI Impacts}{Berkeley, CA}{}{
+        \item Design and planning work for AI Progress survey
+        \item AI researcher interviews investigating AI progress forecasts and AI milestones
+        \item Sociology of AI research 
+    }
+    \entry{4/2013 -- 7/2015}{Software Development Engineer II}{Amazon.com, Inc.}{Seattle, WA}{}{
         \item Taught functional data programming for scala and javascript to two teams
         \item Became internally recognized expert in the Spark mapreduce framework
         \item Critical part of project to rebuild Contribution Profit system in Spark
@@ -75,49 +114,12 @@
         \item Fit numerically using two-layer Hamiltonian Monte-Carlo
             \eitem
     }
-
-    \entry{Summer 2006}{Developer (Intern)}{Capstone Technology}{Camas, WA}{}{
-        \item Improved stability and interface efficiency of PARCSuite plant operations management software (\CS)
-        \item Responsible for the migration of several components of the PARCSuite software from the 1.1 .NET framework to the 2.0 .NET framework 
-    }
 \closesection{}
 
-\section{Open Source}
-    \cventry{2012 -- }{\href{https://github.com/pymc-devs/pymc/commits/pymc3\#readme}{PyMC 3.0}}{Bayesian inference package (Python)}{}{}{
-        \href{https://github.com/pymc-devs/pymc/commits/pymc3}{
-        Engineered PyMC 2.2 Theano based replacement with dramatically simpler, smaller and more powerful code-base, which will soon replace PyMC 2.2 and become PyMC 3.0}
-    }
+    \begin{thebibliography}{1}
+        \bibitem{notes} Salvatier J., Wiecki T., Fonnesbeck C. (2016)  {\em Probabilistic Programming in Python using PyMC} PeerJ Computer Science, forthcoming.
+    \end{thebibliography}
 
-    \entry{2010 -- 2012}{\href{https://github.com/pymc-devs/pymc\#readme}{PyMC 2.0}}{Bayesian inference package (Python, C, Fortran)}{}{}{
-        \item Added Automatic Differentiation for likelihoods
-        \item \href{https://github.com/jsalvatier/gradient\_samplers/blob/master/gradient\_samplers}{Implemented gradient based samplers which scale better with problem size, self-tune, handle difficult distributions well, etc.}
-        \item \href{http://pypi.python.org/pypi/multichain\_mcmc}{Engineered PyMC extension allowing for multiple chain samplers}
-        \item \href{https://github.com/pymc-devs/pymc/commits/numexpr\_dist}{Experimented with numexpr and Cython code generation using Jinja2 templating for likelihoods}
-    }
-    \cventry{2012}{NumPy}{(C)}{}{}{
-        \href{https://github.com/numpy/numpy/pull/377}{Patch adding advanced indexing interface to NumPy's C-API}
-    }
-    \cventry{2012}{Theano}{(Python, C)}{}{}{
-        \href{https://github.com/Theano/Theano/pull/1083}{Patch adding fast advanced indexing and gradient support}
-    }
-
-    \cventry{2009}{\href{packages.python.org/scikits.bvp\_solver}{scikits.bvp\_solver}}{(Python, Fortran)}{}{}{
-        Built and presently maintain a user-friendly interface for the Fortran numerical \\
-        boundary value problem solver BVP\_SOLVER
-        }
-
-\closesection{}
-
-\section{Self-Study}
-    \cventry{10 -- 12/2012}{Carnegie Mellon Courses}{}{}{}{
-        Completed all lectures and homework for two courses. Courses were designed for Standard ML, but I completed them in Scala.
-        \bitem
-        \item \href{http://www.cs.cmu.edu/~15150/previous-semesters/2012-spring/}{15-150: Functional Programming}
-        \item \href{http://www.cs.cmu.edu/~15210/index.html}{15-210: Parallel \& Sequential Data Structures and Algorithms}
-            \eitem
-        }
-        \cventry{12/2012--}{Hadoop and Scalding}{}{}{}{
-            Learning Hadoop via Twitter's Scalding, by implementing efficient parallel prefix-sum function and other projects}
 
 \closesection{}
 
@@ -125,12 +127,11 @@
     \vspace{-24pt}
 \cvitem{}{
     \begin{samepage}\begin{itemize}[leftmargin=*, itemsep=-2pt]
-    \item Fluent with \CS, Python, Scala
-    \item Experienced with Java, Haskell, Standard ML, C, \CPP, Fortran, R, \LaTeX\ 
+    \item Expert with \CS, Python, Scala, PyMC3, Spark, Pandas
+    \item Experienced with Java, Haskell, Standard ML, C, \CPP, Fortran, R, \LaTeX\
     \item Fluent with Bayesian statistical modeling and sophisticated Monte-Carlo sampling
     \item Well-versed in economics and decision theory
     \item Skilled at technical writing
-    \item Fluent in Spanish
         \eitem
 }
 
@@ -139,16 +140,5 @@
     \cventry{2009}{University of Washington}{B.S. in Chemical Engineering}{}{}{}
     \cventry{2009}{University of Washington}{B.S. in Paper Science and Engineering}{}{}{}
     
-\closesection{}
-\section{Other Experience}
-    \entry{Summer 2008}{Process Engineer (Intern)}{Boise-Cascade}{Pasco, WA}{}{
-        \item Investigated economics and feasibility of three capital projects
-        \item Conducted trial to investigate systemic product quality measurement problems
-    }
-
-    \entry{Summer 2007}{Process Engineer (Intern)}{Boise-Cascade}{Pasco, WA}{}{
-        \item Investigated maintenance and energy projects for cost effectiveness }
-
-    \cventry{Summer 2005}{Researcher (Intern)}{Kimberly-Clark}{Neenah, WI}{}{}
 \closesection{}
 \end{document}
